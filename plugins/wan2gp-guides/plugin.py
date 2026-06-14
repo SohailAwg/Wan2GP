@@ -31,6 +31,9 @@ class GuidesPlugin(WAN2GPPlugin):
         with open("docs/PROMPTS.md", "r", encoding="utf-8") as reader:
             prompts = reader.read()
 
+        with open("docs/PLUGIN_USER_GUIDE_CHARACTER_ENVIRONMENT_CONSISTENCY.md", "r", encoding="utf-8") as reader:
+            character_consistency = reader.read()
+
         with open("docs/PROCESSING.md", "r", encoding="utf-8") as reader:
             processing = reader.read()
 
@@ -67,6 +70,8 @@ class GuidesPlugin(WAN2GPPlugin):
                 gr.Markdown(deepy)
             with gr.Tab("Prompts", id="prompts"):
                 gr.Markdown(prompts)
+            with gr.Tab("Character Consistency", id="character_consistency"):
+                gr.Markdown(character_consistency)
             with gr.Tab("Loras", id="loras"):
                 gr.Markdown(loras)
             with gr.Tab("Processing", id="processing"):

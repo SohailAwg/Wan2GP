@@ -6,13 +6,13 @@ import numpy as np
 from typing import Union
 from segment_anything import sam_model_registry, SamPredictor, SamAutomaticMaskGenerator
 import matplotlib
-matplotlib.use('TkAgg') 
+import os
+matplotlib.use('Agg' if os.environ.get('WAN2GP_KAGGLE_MODE') == '1' or not os.environ.get('DISPLAY') else 'TkAgg')
 import matplotlib.pyplot as plt
 import PIL
 from .mask_painter import mask_painter as mask_painter2
 from .base_segmenter import BaseSegmenter
 from .painter import mask_painter, point_painter
-import os
 import requests
 import sys 
 
@@ -96,6 +96,5 @@ class SamControler():
     
 
 
-    
     
     
